@@ -3,33 +3,73 @@
 /*
  * Design System: "The Operator"
  * Premium founder portfolio - Command Center aesthetic
+ * Supports both light and dark modes (system preference)
  *
- * Philosophy: Dark, bold, metrics-driven, executive-grade
- * Inspiration: Linear, Vercel, Stripe Dashboard, Bloomberg Terminal
+ * Philosophy: Bold, metrics-driven, executive-grade
+ * Inspiration: Linear, Vercel, Stripe Dashboard
  */
 
+/* ============================================
+   LIGHT THEME (Default)
+   ============================================ */
 :root {
-  /* Dark luxury palette */
-  --background: #000000;
-  --background-elevated: #0a0a0a;
-  --background-subtle: #111111;
-  --foreground: #ffffff;
-  --foreground-muted: #888888;
-  --foreground-subtle: #555555;
+  /* Light premium palette */
+  --background: #ffffff;
+  --background-elevated: #fafafa;
+  --background-subtle: #f5f5f5;
+  --foreground: #0a0a0a;
+  --foreground-muted: #525252;
+  --foreground-subtle: #a3a3a3;
 
   /* Borders */
-  --border: #222222;
-  --border-subtle: #1a1a1a;
+  --border: #e5e5e5;
+  --border-subtle: #f0f0f0;
 
-  /* Accent - electric subtle */
-  --accent: #ffffff;
-  --accent-dim: rgba(255, 255, 255, 0.1);
+  /* Accent */
+  --accent: #0a0a0a;
+  --accent-dim: rgba(0, 0, 0, 0.05);
 
   /* Status colors */
-  --success: #00ff88;
-  --active: #00ff88;
+  --success: #16a34a;
+  --active: #16a34a;
+
+  /* Grid pattern for light mode */
+  --grid-color: rgba(0, 0, 0, 0.03);
 }
 
+/* ============================================
+   DARK THEME (System preference)
+   ============================================ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark luxury palette */
+    --background: #000000;
+    --background-elevated: #0a0a0a;
+    --background-subtle: #111111;
+    --foreground: #ffffff;
+    --foreground-muted: #888888;
+    --foreground-subtle: #555555;
+
+    /* Borders */
+    --border: #222222;
+    --border-subtle: #1a1a1a;
+
+    /* Accent */
+    --accent: #ffffff;
+    --accent-dim: rgba(255, 255, 255, 0.1);
+
+    /* Status colors */
+    --success: #00ff88;
+    --active: #00ff88;
+
+    /* Grid pattern for dark mode */
+    --grid-color: rgba(255, 255, 255, 0.02);
+  }
+}
+
+/* ============================================
+   TAILWIND THEME TOKENS
+   ============================================ */
 @theme inline {
   --color-background: var(--background);
   --color-background-elevated: var(--background-elevated);
@@ -47,7 +87,9 @@
   --font-mono: "SF Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
-/* Base */
+/* ============================================
+   BASE STYLES
+   ============================================ */
 html {
   scroll-behavior: smooth;
 }
@@ -81,7 +123,9 @@ body {
   transition-timing-function: ease-out;
 }
 
-/* Custom scrollbar */
+/* ============================================
+   SCROLLBAR
+   ============================================ */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -99,7 +143,9 @@ body {
   background: var(--foreground-subtle);
 }
 
-/* Animations */
+/* ============================================
+   ANIMATIONS
+   ============================================ */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
@@ -134,9 +180,13 @@ body {
 .stagger-4 { animation-delay: 0.4s; }
 .stagger-5 { animation-delay: 0.5s; }
 
+/* ============================================
+   VISUAL EFFECTS
+   ============================================ */
+
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #ffffff 0%, #888888 100%);
+  background: linear-gradient(135deg, var(--foreground) 0%, var(--foreground-muted) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -144,18 +194,24 @@ body {
 
 /* Glow effects */
 .glow {
-  box-shadow: 0 0 40px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 40px var(--accent-dim);
 }
 
 .glow-success {
   box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
 }
 
+@media (prefers-color-scheme: light) {
+  .glow-success {
+    box-shadow: 0 0 20px rgba(22, 163, 74, 0.2);
+  }
+}
+
 /* Grid pattern background */
 .grid-pattern {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 

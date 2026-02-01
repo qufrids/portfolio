@@ -1,30 +1,33 @@
-import { expertise } from "@/data/content";
+import { systems } from "@/data/content";
 
-export function Expertise() {
+export function Systems() {
   return (
-    <section id="expertise" className="py-24 px-6">
-      <div className="max-w-4xl mx-auto">
+    <section id="systems" className="py-32 px-6 md:px-12 lg:px-24 border-t border-border bg-background-subtle">
+      <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="mb-12">
-          <h2 className="text-sm font-medium text-muted tracking-wide uppercase mb-4">
-            Skills
+        <div className="mb-16">
+          <span className="text-sm font-mono text-foreground-subtle tracking-wider">
+            {systems.title}
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mt-4">
+            {systems.subtitle}
           </h2>
-          <p className="text-3xl sm:text-4xl font-semibold tracking-tight">
-            {expertise.title}
-          </p>
         </div>
 
-        {/* Skills Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {expertise.categories.map((category, index) => (
-            <div key={index}>
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground mb-4">
+        {/* Systems Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
+          {systems.categories.map((category, index) => (
+            <div
+              key={index}
+              className="bg-background-subtle p-8 hover:bg-background group"
+            >
+              <h3 className="text-sm font-mono uppercase tracking-wider text-foreground-subtle mb-6 group-hover:text-active">
                 {category.name}
               </h3>
-              <ul className="space-y-2">
-                {category.skills.map((skill, sIndex) => (
-                  <li key={sIndex} className="text-muted">
-                    {skill}
+              <ul className="space-y-3">
+                {category.items.map((item, iIndex) => (
+                  <li key={iIndex} className="text-foreground-muted group-hover:text-foreground">
+                    {item}
                   </li>
                 ))}
               </ul>
@@ -35,3 +38,6 @@ export function Expertise() {
     </section>
   );
 }
+
+// Keep backward compatible export
+export { Systems as Expertise };

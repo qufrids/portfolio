@@ -1,13 +1,13 @@
 import {
   Navigation,
   Hero,
-  About,
+  Mission,
   Ventures,
   Projects,
-  Achievements,
-  Expertise,
+  Timeline,
+  Systems,
   Credentials,
-  Testimonials,
+  Trust,
   Contact,
   Footer,
 } from "@/components";
@@ -18,13 +18,13 @@ export default function Home() {
       <Navigation />
       <main>
         <Hero />
-        <About />
+        <Mission />
         <Ventures />
         <Projects />
-        <Achievements />
-        <Expertise />
+        <Timeline />
+        <Systems />
         <Credentials />
-        <Testimonials />
+        <Trust />
         <Contact />
       </main>
       <Footer />

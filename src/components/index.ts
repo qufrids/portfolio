@@ -1,11 +1,11 @@
 export { Navigation } from "./Navigation";
 export { Hero } from "./Hero";
-export { About } from "./About";
+export { Mission, About } from "./About";
 export { Ventures } from "./Ventures";
 export { Projects } from "./Projects";
-export { Achievements } from "./Achievements";
-export { Expertise } from "./Expertise";
+export { Timeline, Achievements } from "./Achievements";
+export { Systems, Expertise } from "./Expertise";
 export { Credentials } from "./Credentials";
-export { Testimonials } from "./Testimonials";
+export { Trust, Testimonials } from "./Testimonials";
 export { Contact } from "./Contact";
 export { Footer } from "./Footer";

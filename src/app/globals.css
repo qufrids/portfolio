@@ -1,61 +1,53 @@
 @import "tailwindcss";
 
 /*
- * Design System: Premium Founder Portfolio
- * Inspired by: Stripe, Linear, Notion, YC founder sites
+ * Design System: "The Operator"
+ * Premium founder portfolio - Command Center aesthetic
  *
- * Color Philosophy: Clean, minimal, high-contrast
- * Typography: Sharp, professional, readable
- * Spacing: Generous whitespace, breathing room
+ * Philosophy: Dark, bold, metrics-driven, executive-grade
+ * Inspiration: Linear, Vercel, Stripe Dashboard, Bloomberg Terminal
  */
 
 :root {
-  /* Neutral palette - premium feel */
-  --background: #ffffff;
-  --foreground: #0a0a0a;
-  --muted: #71717a;
-  --muted-foreground: #a1a1aa;
-  --border: #e4e4e7;
-  --border-subtle: #f4f4f5;
+  /* Dark luxury palette */
+  --background: #000000;
+  --background-elevated: #0a0a0a;
+  --background-subtle: #111111;
+  --foreground: #ffffff;
+  --foreground-muted: #888888;
+  --foreground-subtle: #555555;
 
-  /* Accent - subtle, professional */
-  --accent: #18181b;
-  --accent-foreground: #fafafa;
+  /* Borders */
+  --border: #222222;
+  --border-subtle: #1a1a1a;
 
-  /* Semantic */
-  --success: #22c55e;
-  --link: #2563eb;
-}
+  /* Accent - electric subtle */
+  --accent: #ffffff;
+  --accent-dim: rgba(255, 255, 255, 0.1);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #09090b;
-    --foreground: #fafafa;
-    --muted: #a1a1aa;
-    --muted-foreground: #71717a;
-    --border: #27272a;
-    --border-subtle: #18181b;
-    --accent: #fafafa;
-    --accent-foreground: #18181b;
-    --success: #4ade80;
-    --link: #60a5fa;
-  }
+  /* Status colors */
+  --success: #00ff88;
+  --active: #00ff88;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-elevated: var(--background-elevated);
+  --color-background-subtle: var(--background-subtle);
   --color-foreground: var(--foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-foreground-subtle: var(--foreground-subtle);
   --color-border: var(--border);
   --color-border-subtle: var(--border-subtle);
   --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  --color-accent-dim: var(--accent-dim);
+  --color-success: var(--success);
+  --color-active: var(--active);
+  --font-sans: "SF Pro Display", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "SF Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
-/* Base styles */
+/* Base */
 html {
   scroll-behavior: smooth;
 }
@@ -63,44 +55,116 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
-  line-height: 1.6;
+  font-family: var(--font-sans);
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
-/* Selection styling */
+/* Selection */
 ::selection {
   background: var(--foreground);
   color: var(--background);
 }
 
-/* Focus styles */
+/* Focus */
 :focus-visible {
-  outline: 2px solid var(--foreground);
+  outline: 1px solid var(--foreground-subtle);
   outline-offset: 2px;
 }
 
 /* Smooth transitions */
-a, button {
-  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, opacity 0.15s ease;
+* {
+  transition-property: background-color, border-color, color, opacity, transform;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
 }
 
-/* Custom scrollbar for webkit */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--border-subtle);
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--muted-foreground);
-  border-radius: 4px;
+  background: var(--border);
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--muted);
+  background: var(--foreground-subtle);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+/* Stagger animations */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, #888888 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow effects */
+.glow {
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.05);
+}
+
+.glow-success {
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+}
+
+/* Grid pattern background */
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Noise texture overlay */
+.noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
 }

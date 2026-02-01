@@ -1,38 +1,32 @@
-import { testimonials } from "@/data/content";
+import { trust } from "@/data/content";
 
-export function Testimonials() {
+export function Trust() {
   return (
-    <section id="testimonials" className="py-24 px-6">
-      <div className="max-w-4xl mx-auto">
+    <section id="trust" className="py-32 px-6 md:px-12 lg:px-24 border-t border-border bg-background-subtle">
+      <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="mb-12">
-          <h2 className="text-sm font-medium text-muted tracking-wide uppercase mb-4">
-            Testimonials
-          </h2>
-          <p className="text-3xl sm:text-4xl font-semibold tracking-tight">
-            {testimonials.title}
-          </p>
+        <div className="mb-16">
+          <span className="text-sm font-mono text-foreground-subtle tracking-wider">
+            {trust.title}
+          </span>
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-3 gap-6">
-          {testimonials.items.map((testimonial, index) => (
+        {/* Quotes */}
+        <div className="grid md:grid-cols-3 gap-px bg-border">
+          {trust.quotes.map((quote, index) => (
             <article
               key={index}
-              className="p-6 border border-border rounded-lg"
+              className="bg-background-subtle p-8 md:p-10 hover:bg-background group"
             >
               {/* Quote */}
-              <blockquote className="text-muted leading-relaxed mb-6">
-                &ldquo;{testimonial.quote}&rdquo;
+              <blockquote className="text-xl md:text-2xl font-medium leading-relaxed mb-8 group-hover:text-foreground text-foreground-muted">
+                &ldquo;{quote.text}&rdquo;
               </blockquote>
 
               {/* Author */}
-              <div>
-                <p className="font-semibold text-sm">{testimonial.author}</p>
-                <p className="text-sm text-muted-foreground">
-                  {testimonial.role}, {testimonial.company}
-                </p>
-              </div>
+              <p className="text-sm font-mono text-foreground-subtle">
+                — {quote.author}
+              </p>
             </article>
           ))}
         </div>
@@ -40,3 +34,6 @@ export function Testimonials() {
     </section>
   );
 }
+
+// Keep backward compatible export
+export { Trust as Testimonials };

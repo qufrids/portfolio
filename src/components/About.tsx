@@ -1,37 +1,33 @@
-import { about } from "@/data/content";
+import { mission } from "@/data/content";
 
-export function About() {
+export function Mission() {
   return (
-    <section id="about" className="py-24 px-6">
-      <div className="max-w-4xl mx-auto">
+    <section id="mission" className="py-32 px-6 md:px-12 lg:px-24 border-t border-border">
+      <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="mb-12">
-          <h2 className="text-sm font-medium text-muted tracking-wide uppercase mb-4">
-            About
-          </h2>
-          <p className="text-3xl sm:text-4xl font-semibold tracking-tight">
-            {about.title}
-          </p>
+        <div className="mb-16">
+          <span className="text-sm font-mono text-foreground-subtle tracking-wider">
+            {mission.title}
+          </span>
         </div>
 
-        {/* Content Grid */}
-        <div className="grid md:grid-cols-3 gap-12">
-          {/* Bio */}
-          <div className="md:col-span-2 space-y-6">
-            {about.paragraphs.map((paragraph, index) => (
-              <p key={index} className="text-muted leading-relaxed">
+        {/* Main Statement */}
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-16 max-w-4xl">
+          {mission.statement}
+        </h2>
+
+        {/* Paragraphs */}
+        <div className="grid md:grid-cols-2 gap-12 md:gap-16">
+          <div className="space-y-6">
+            <p className="text-xl md:text-2xl text-foreground leading-relaxed">
+              {mission.paragraphs[0]}
+            </p>
+          </div>
+          <div className="space-y-6">
+            {mission.paragraphs.slice(1).map((paragraph, index) => (
+              <p key={index} className="text-lg text-foreground-muted leading-relaxed">
                 {paragraph}
               </p>
-            ))}
-          </div>
-
-          {/* Facts Sidebar */}
-          <div className="space-y-6">
-            {about.facts.map((fact, index) => (
-              <div key={index}>
-                <p className="text-sm text-muted-foreground mb-1">{fact.label}</p>
-                <p className="font-medium">{fact.value}</p>
-              </div>
             ))}
           </div>
         </div>
@@ -39,3 +35,6 @@ export function About() {
     </section>
   );
 }
+
+// Keep backward compatible export
+export { Mission as About };

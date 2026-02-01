@@ -4,10 +4,9 @@ import { useState, useEffect } from "react";
 import { siteConfig } from "@/data/content";
 
 const navLinks = [
-  { href: "#about", label: "About" },
   { href: "#ventures", label: "Ventures" },
-  { href: "#projects", label: "Projects" },
-  { href: "#expertise", label: "Expertise" },
+  { href: "#products", label: "Products" },
+  { href: "#timeline", label: "Timeline" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -17,7 +16,7 @@ export function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 100);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -25,20 +24,20 @@ export function Navigation() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-background/80 backdrop-blur-md border-b border-border"
+          ? "bg-background/90 backdrop-blur-md border-b border-border"
           : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto max-w-6xl px-6 py-4">
+      <nav className="mx-auto max-w-6xl px-6 md:px-12 lg:px-24 py-6">
         <div className="flex items-center justify-between">
           {/* Logo / Name */}
           <a
             href="#"
-            className="text-lg font-semibold tracking-tight hover:opacity-70"
+            className="font-mono text-sm tracking-wide hover:text-foreground-muted"
           >
-            {siteConfig.name}
+            {siteConfig.name.toUpperCase()}
           </a>
 
           {/* Desktop Navigation */}
@@ -47,7 +46,7 @@ export function Navigation() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="text-sm text-muted hover:text-foreground transition-colors"
+                  className="text-sm font-mono text-foreground-muted hover:text-foreground tracking-wide"
                 >
                   {link.label}
                 </a>
@@ -58,7 +57,7 @@ export function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 -mr-2"
+            className="md:hidden p-2 -mr-2 text-foreground-muted hover:text-foreground"
             aria-label="Toggle menu"
           >
             <svg
@@ -79,7 +78,7 @@ export function Navigation() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={1.5}
-                  d="M4 6h16M4 12h16M4 18h16"
+                  d="M4 6h16M4 12h16"
                 />
               )}
             </svg>
@@ -88,19 +87,21 @@ export function Navigation() {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <ul className="md:hidden pt-4 pb-2 space-y-2">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block py-2 text-muted hover:text-foreground transition-colors"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+          <div className="md:hidden fixed inset-0 top-[72px] bg-background z-40">
+            <ul className="flex flex-col items-center justify-center h-full gap-8">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-3xl font-bold hover:text-active"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         )}
       </nav>
     </header>

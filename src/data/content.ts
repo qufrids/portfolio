@@ -1,18 +1,16 @@
 /**
- * Portfolio Content Data
- * ----------------------
- * All content is centralized here for easy editing.
- * Replace placeholder text with your actual information.
+ * Portfolio Content — "The Operator"
+ * Sharp, confident, founder-level copy
  */
 
 export const siteConfig = {
   name: "Umar Zeb",
-  title: "Founder & Software Engineer",
-  description: "Building AI-powered software companies. Software engineer and entrepreneur focused on scalable SaaS products.",
+  title: "Founder · Engineer · Operator",
+  description: "I build software companies. Founder and engineer focused on AI and SaaS.",
   url: "https://umarzeb.com",
-  email: "contact@umarzeb.com",
-  location: "San Francisco, CA",
-  available: true,
+  email: "hello@umarzeb.com",
+  location: "San Francisco",
+  status: "Building",
   social: {
     linkedin: "https://linkedin.com/in/umarzeb",
     github: "https://github.com/umarzeb",
@@ -21,228 +19,195 @@ export const siteConfig = {
 };
 
 export const hero = {
-  greeting: "Umar Zeb",
-  headline: "Building software companies.",
-  subheadline: "Founder and software engineer focused on AI-powered SaaS products. Previously built and scaled products serving thousands of users.",
-  credentials: [
-    "Founded 2 companies",
-    "10+ years engineering",
-    "3 successful exits",
+  name: "Umar Zeb",
+  statement: "I build companies.",
+  description: "Founder and software engineer. Building AI-powered products that scale.",
+  status: {
+    label: "Currently",
+    value: "Building",
+    active: true,
+  },
+  metrics: [
+    { value: "$5M+", label: "Revenue" },
+    { value: "2", label: "Exits" },
+    { value: "100K+", label: "Users" },
+    { value: "10+", label: "Years" },
   ],
 };
 
-export const about = {
-  title: "Background",
+export const mission = {
+  title: "01 — Mission",
+  statement: "Build tools that matter.",
   paragraphs: [
-    "I build software companies. Over the past decade, I've founded multiple ventures, led engineering teams, and shipped products used by thousands of businesses worldwide.",
-    "My focus is on AI and SaaS—building tools that solve real problems with clean, scalable architecture. I care about craft: code quality, user experience, and sustainable growth.",
-    "Before founding companies, I worked as a senior engineer at early-stage startups, where I learned to ship fast without compromising on fundamentals.",
-  ],
-  facts: [
-    { label: "Based in", value: "San Francisco, CA" },
-    { label: "Experience", value: "10+ years" },
-    { label: "Focus", value: "AI / SaaS" },
-    { label: "Status", value: "Building" },
+    "I start companies. I write code. I ship products.",
+    "Over the past decade, I've founded ventures, led engineering teams, and built software used by thousands of businesses. My focus: AI and SaaS products with clean architecture and sustainable growth.",
+    "I believe in craft—code quality, user experience, and building things that last.",
   ],
 };
 
 export const ventures = {
-  title: "Companies & Ventures",
-  subtitle: "Companies I've founded, co-founded, or led as a technical leader.",
+  title: "02 — Ventures",
+  subtitle: "Companies built",
   items: [
     {
-      name: "Company One",
+      name: "Venture One",
       role: "Founder & CEO",
-      period: "2022 – Present",
+      period: "2022 — Present",
       status: "Active",
-      description: "AI-powered workflow automation platform for enterprise teams. Processing 1M+ automations monthly.",
-      highlights: ["$2M ARR", "50+ enterprise clients", "12-person team"],
-      url: "https://companyone.com",
+      description: "AI-powered workflow automation for enterprise. Processing 1M+ automations monthly.",
+      metrics: [
+        { value: "$2M", label: "ARR" },
+        { value: "50+", label: "Clients" },
+        { value: "12", label: "Team" },
+      ],
+      url: "#",
     },
     {
-      name: "Company Two",
+      name: "Venture Two",
       role: "Co-Founder & CTO",
-      period: "2019 – 2022",
+      period: "2019 — 2022",
       status: "Acquired",
-      description: "Developer tools for API testing and documentation. Acquired by a Fortune 500 company.",
-      highlights: ["100K+ users", "Acquired 2022", "Series A funded"],
+      description: "Developer tools for API testing. Acquired by Fortune 500.",
+      metrics: [
+        { value: "100K+", label: "Users" },
+        { value: "Series A", label: "Funded" },
+        { value: "2022", label: "Exit" },
+      ],
       url: null,
     },
     {
-      name: "Company Three",
+      name: "Venture Three",
       role: "Founding Engineer",
-      period: "2017 – 2019",
+      period: "2017 — 2019",
       status: "Acquired",
-      description: "E-commerce analytics platform. First engineering hire, built core product from scratch.",
-      highlights: ["$10M+ GMV tracked", "50+ integrations", "Acquired 2019"],
+      description: "E-commerce analytics platform. First hire, built core product.",
+      metrics: [
+        { value: "$10M+", label: "GMV" },
+        { value: "50+", label: "Integrations" },
+        { value: "2019", label: "Exit" },
+      ],
       url: null,
     },
   ],
 };
 
-export const projects = {
-  title: "Projects & Products",
-  subtitle: "Selected technical projects and products I've built.",
+export const products = {
+  title: "03 — Products",
+  subtitle: "Things I've shipped",
   items: [
     {
       name: "AI Document Parser",
-      category: "Open Source",
-      description: "High-accuracy document extraction using vision models. 10K+ GitHub stars.",
+      type: "Open Source",
+      description: "Vision-based document extraction",
+      metric: "10K+ stars",
       tech: ["Python", "PyTorch", "FastAPI"],
-      url: "https://github.com/umarzeb/doc-parser",
-      metrics: "10K+ stars",
     },
     {
-      name: "SaaS Boilerplate",
-      category: "Product",
-      description: "Production-ready Next.js starter for SaaS applications. Auth, billing, teams built-in.",
+      name: "SaaS Starter Kit",
+      type: "Product",
+      description: "Production-ready Next.js boilerplate",
+      metric: "500+ sold",
       tech: ["Next.js", "TypeScript", "Stripe"],
-      url: "https://saasboilerplate.io",
-      metrics: "500+ licenses sold",
     },
     {
-      name: "Real-time Analytics Engine",
-      category: "Infrastructure",
-      description: "Sub-millisecond event processing pipeline handling 1B+ events/day.",
+      name: "Analytics Engine",
+      type: "Infrastructure",
+      description: "Real-time event processing",
+      metric: "1B+ events/day",
       tech: ["Go", "Kafka", "ClickHouse"],
-      url: null,
-      metrics: "1B+ events/day",
     },
     {
       name: "Mobile SDK",
-      category: "Developer Tools",
-      description: "Cross-platform SDK for mobile analytics. Used by 200+ apps.",
-      tech: ["Swift", "Kotlin", "React Native"],
-      url: null,
-      metrics: "200+ apps",
+      type: "Developer Tools",
+      description: "Cross-platform analytics SDK",
+      metric: "200+ apps",
+      tech: ["Swift", "Kotlin"],
     },
   ],
 };
 
-export const achievements = {
-  title: "Achievements",
-  items: [
-    {
-      metric: "$5M+",
-      label: "Revenue Generated",
-      description: "Across founded companies",
-    },
-    {
-      metric: "2",
-      label: "Successful Exits",
-      description: "Companies acquired",
-    },
-    {
-      metric: "100K+",
-      label: "Users Served",
-      description: "Across all products",
-    },
-    {
-      metric: "50+",
-      label: "Enterprise Clients",
-      description: "Fortune 500 included",
-    },
-  ],
-  milestones: [
-    { year: "2024", event: "Launched AI automation platform" },
-    { year: "2022", event: "Company Two acquired" },
-    { year: "2021", event: "Raised Series A funding" },
-    { year: "2019", event: "Company Three acquired" },
-    { year: "2017", event: "First founding engineer role" },
-    { year: "2014", event: "Started professional engineering career" },
+export const timeline = {
+  title: "04 — Timeline",
+  events: [
+    { year: "2024", event: "Launched AI automation platform", type: "launch" },
+    { year: "2022", event: "Venture Two acquired", type: "exit" },
+    { year: "2022", event: "Founded Venture One", type: "founded" },
+    { year: "2021", event: "Raised Series A", type: "funding" },
+    { year: "2019", event: "Venture Three acquired", type: "exit" },
+    { year: "2019", event: "Co-founded Venture Two", type: "founded" },
+    { year: "2017", event: "Joined as founding engineer", type: "role" },
+    { year: "2016", event: "M.S. Computer Science, Stanford", type: "education" },
+    { year: "2014", event: "Started engineering career", type: "role" },
   ],
 };
 
-export const expertise = {
-  title: "Expertise",
+export const systems = {
+  title: "05 — Systems",
+  subtitle: "What I build with",
   categories: [
     {
-      name: "Technical Leadership",
-      skills: ["System Architecture", "Technical Strategy", "Team Building", "Code Review", "DevOps"],
+      name: "Leadership",
+      items: ["Architecture", "Strategy", "Team Building", "Technical Vision"],
     },
     {
-      name: "Languages & Frameworks",
-      skills: ["TypeScript", "Python", "Go", "React", "Next.js", "Node.js", "FastAPI"],
+      name: "Stack",
+      items: ["TypeScript", "Python", "Go", "React", "Next.js", "Node.js"],
     },
     {
       name: "Infrastructure",
-      skills: ["AWS", "GCP", "Kubernetes", "PostgreSQL", "Redis", "Kafka"],
+      items: ["AWS", "GCP", "Kubernetes", "PostgreSQL", "Redis"],
     },
     {
-      name: "AI & ML",
-      skills: ["LLMs", "RAG Systems", "Computer Vision", "PyTorch", "Vector Databases"],
-    },
-    {
-      name: "Product & Business",
-      skills: ["Product Strategy", "Fundraising", "GTM", "User Research", "Analytics"],
+      name: "AI/ML",
+      items: ["LLMs", "RAG", "Computer Vision", "PyTorch", "Vector DBs"],
     },
   ],
 };
 
 export const credentials = {
-  title: "Credentials",
+  title: "06 — Credentials",
   education: [
-    {
-      degree: "M.S. Computer Science",
-      institution: "Stanford University",
-      year: "2016",
-      focus: "Machine Learning & Distributed Systems",
-    },
-    {
-      degree: "B.S. Computer Science",
-      institution: "UC Berkeley",
-      year: "2014",
-      focus: "Algorithms & Systems",
-    },
+    { degree: "M.S. Computer Science", school: "Stanford University", year: "2016" },
+    { degree: "B.S. Computer Science", school: "UC Berkeley", year: "2014" },
   ],
   certifications: [
-    { name: "AWS Solutions Architect Professional", issuer: "Amazon Web Services", year: "2023" },
-    { name: "Google Cloud Professional Data Engineer", issuer: "Google Cloud", year: "2022" },
+    { name: "AWS Solutions Architect Pro", year: "2023" },
+    { name: "GCP Data Engineer", year: "2022" },
   ],
   publications: [
-    {
-      title: "Efficient Document Understanding at Scale",
-      venue: "NeurIPS Workshop",
-      year: "2023",
-      url: null,
-    },
-    {
-      title: "Building Real-time Analytics Systems",
-      venue: "O'Reilly Media",
-      year: "2021",
-      url: null,
-    },
+    { title: "Document Understanding at Scale", venue: "NeurIPS", year: "2023" },
+    { title: "Real-time Analytics Systems", venue: "O'Reilly", year: "2021" },
   ],
 };
 
-export const testimonials = {
-  title: "What Others Say",
-  items: [
+export const trust = {
+  title: "07 — Trust",
+  quotes: [
     {
-      quote: "One of the most technically capable founders I've worked with. Umar combines deep engineering expertise with strong product intuition.",
-      author: "Jane Smith",
-      role: "Partner",
-      company: "Venture Capital Firm",
+      text: "One of the most technically capable founders I've worked with.",
+      author: "Partner, Venture Capital",
     },
     {
-      quote: "Umar built our entire technical infrastructure from scratch. His systems still run flawlessly three years later.",
-      author: "John Doe",
-      role: "CEO",
-      company: "Acquired Startup",
+      text: "Built our entire technical infrastructure. Still runs flawlessly.",
+      author: "CEO, Acquired Startup",
     },
     {
-      quote: "Exceptional ability to translate complex technical concepts for non-technical stakeholders. Rare combination of skills.",
-      author: "Sarah Johnson",
-      role: "VP Engineering",
-      company: "Fortune 500 Company",
+      text: "Rare ability to translate technical concepts for any audience.",
+      author: "VP Engineering, Fortune 500",
     },
   ],
 };
 
 export const contact = {
-  title: "Get in Touch",
-  subtitle: "Open to discussing ventures, partnerships, advisory roles, and interesting technical challenges.",
-  cta: "Schedule a conversation",
-  email: "contact@umarzeb.com",
-  availability: "Currently accepting select advisory and consulting engagements.",
+  title: "08 — Contact",
+  headline: "Let's talk.",
+  description: "Open to ventures, partnerships, advisory roles, and interesting problems.",
+  email: "hello@umarzeb.com",
+  status: "Accepting select engagements",
+  links: [
+    { label: "Email", url: "mailto:hello@umarzeb.com" },
+    { label: "LinkedIn", url: "https://linkedin.com/in/umarzeb" },
+    { label: "GitHub", url: "https://github.com/umarzeb" },
+    { label: "Twitter", url: "https://twitter.com/umarzeb" },
+  ],
 };
